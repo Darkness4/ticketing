@@ -1,0 +1,26 @@
+name: ticketing
+description: Ticketing system using Firebase.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^2.4.0
+  flutter: ^1.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^0.21.0
+  equatable: ^0.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
+  extra_pedantic: ^1.0.0
+
+
+flutter:
+  uses-material-design: true
