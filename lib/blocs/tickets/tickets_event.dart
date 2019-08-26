@@ -22,3 +22,9 @@ class PostTicketEvent extends TicketsListEvent {
   PostTicketEvent(this.username, this.command)
       : super(<dynamic>[username, command]);
 }
+
+class DeleteTicketEvent extends TicketsListEvent {
+  final Ticket ticket;
+
+  DeleteTicketEvent(this.ticket) : super(<dynamic>[ticket]);
+}

@@ -30,6 +30,8 @@ class TicketsBloc extends Bloc<TicketsListEvent, TicketsListState> {
       yield* _mapTicketsListUpdateToState(event);
     } else if (event is PostTicketEvent) {
       yield* _mapPostTicketToState(event);
+    } else if (event is DeleteTicketEvent) {
+      yield* _mapDeleteTicketToState(event);
     }
   }
 
@@ -54,5 +56,10 @@ class TicketsBloc extends Bloc<TicketsListEvent, TicketsListState> {
 
   Stream<TicketsListState> _mapPostTicketToState(PostTicketEvent event) async* {
     await _firebaseAPI.postTicket(event.username, event.command);
+  }
+
+  Stream<TicketsListState> _mapDeleteTicketToState(
+      DeleteTicketEvent event) async* {
+    await _firebaseAPI.deleteTicket(event.ticket);
   }
 }

@@ -13,6 +13,10 @@ class FirebaseAPI extends Equatable {
     });
   }
 
+  Future<void> deleteTicket(Ticket ticket) async {
+    await instance.collection('tickets').document(ticket.ticketId).delete();
+  }
+
   Stream<List<Ticket>> fetchTickets() async* {
     await for (final QuerySnapshot data
         in instance.collection('tickets').snapshots()) {

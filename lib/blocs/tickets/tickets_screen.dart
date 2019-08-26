@@ -82,12 +82,24 @@ class TicketScreenState extends State<TicketScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   for (Ticket ticket in tickets)
-                    Text(
-                      "[${ticket.dateTime.toIso8601String()}] ${ticket.username}: ${ticket.command}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body1
-                          .copyWith(color: Colors.white),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            "[${ticket.dateTime.toIso8601String()}] ${ticket.username}: ${ticket.command}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .body1
+                                .copyWith(color: Colors.white),
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.close),
+                          color: Colors.white,
+                          onPressed: () =>
+                              bloc.dispatch(DeleteTicketEvent(ticket)),
+                        ),
+                      ],
                     )
                 ],
               ),
