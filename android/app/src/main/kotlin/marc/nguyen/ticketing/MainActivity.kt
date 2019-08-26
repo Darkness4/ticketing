@@ -1,4 +1,4 @@
-package com.example.ticketing
+package marc.nguyen.ticketing
 
 import android.os.Bundle
 

@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^0.21.0
+  cloud_firestore: ^0.12.9+1
   equatable: ^0.4.0
 
 dev_dependencies:
